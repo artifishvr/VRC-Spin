@@ -1,12 +1,12 @@
 {
   "name": "vrcspin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "build": "npx caxa --input . --output \"pain.exe\" -- \"{{caxa}}/node_modules/.bin/node\" \"{{caxa}}/index.js\"",
+    "build": "npx caxa -i . -o \"pain.exe\" -m \"Uncompressing... This may take a moment.\" -- \"{{caxa}}/node_modules/.bin/node\" \"{{caxa}}/index.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
