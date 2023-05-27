@@ -15,7 +15,7 @@
     "appId": "gay.arti.vrcspin",
     "productName": "VRCSpin",
     "win": {
-      "target": "portable",
+      "target": ["portable", "nsis"],
       "publish": [
         "github"
       ]
