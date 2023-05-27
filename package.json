@@ -1,28 +1,29 @@
 {
   "name": "vrcspin",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish"
+    "start": "electron .",
+    "rebuild": "electron-rebuild",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "gay.arti.vrcspin",
+    "productName": "VRCSpin",
+    "win": {
+      "target": "portable"
+    }
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "@electron-forge/cli": "^6.1.1",
-    "@electron-forge/maker-deb": "^6.1.1",
-    "@electron-forge/maker-rpm": "^6.1.1",
-    "@electron-forge/maker-squirrel": "^6.1.1",
-    "@electron-forge/maker-zip": "^6.1.1",
-    "@electron-forge/publisher-github": "^6.1.1",
     "@electron/rebuild": "^3.2.13",
     "dotenv": "^16.0.3",
-    "electron": "^24.4.0"
+    "electron": "^24.4.0",
+    "electron-builder": "^23.6.0"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",

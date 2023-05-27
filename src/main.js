@@ -8,18 +8,17 @@ function createWindow () {
   const win = new BrowserWindow({
     width: 535,
     height: 385,
-    titleBarStyle: 'hidden',
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    }
+    titleBarStyle: 'hidden'
   })
 
-  win.loadFile('index.html')
+  win.loadFile(path.join(__dirname, 'index.html'))
   win.setPosition(10, 10)
+  win.setAlwaysOnTop(true)
 }
 
 app.whenReady().then(() => {
   createWindow()
+  
 
   client.send('/input/LookRight', 1, () => {
     client.close();
@@ -33,7 +32,6 @@ app.whenReady().then(() => {
 })
 
 app.on('window-all-closed', () => {
-
   if (process.platform !== 'darwin') {
     app.quit()
   }
