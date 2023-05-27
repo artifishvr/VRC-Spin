@@ -1,7 +1,7 @@
 {
   "name": "vrcspin",
   "version": "2.1.0",
-  "description": "",
+  "description": "terrible OSC joke",
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
@@ -17,7 +17,7 @@
     }
   },
   "keywords": [],
-  "author": "",
+  "author": "ArtificialVR",
   "license": "MIT",
   "devDependencies": {
     "@electron/rebuild": "^3.2.13",
