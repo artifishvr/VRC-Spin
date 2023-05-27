@@ -20,7 +20,8 @@ app.whenReady().then(() => {
   createWindow()
   
 
-  client.send('/input/LookRight', 1, () => {
+  client.send('/input/LookRight', 1, () => {});
+  client.send('/input/MoveLeft', 1, () => {
     client.close();
   });
 

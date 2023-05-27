@@ -1,6 +1,6 @@
 {
   "name": "vrcspin",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "terrible OSC joke",
   "main": "src/main.js",
   "scripts": {
