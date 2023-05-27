@@ -1,8 +1,10 @@
 # VRC Spin
 
-a dumb joke using VRChat's OSC & [Camellia's Spin Eternally](https://www.youtube.com/watch?v=IuRwqB9NwVQ&pp=ygUOc3BpbiBldGVybmFsbHk%3D)
+a dumb joke using VRChat's OSC & [Camellia's Spin Eternally](https://youtu.be/IuRwqB9NwVQ)
 
 ## Usage
+
+Prebuilt EXEs can be found in [Releases](https://github.com/artificialbutter/VRC-Spin/releases)
 
 1. Open VRChat
 2. Enable OSC
