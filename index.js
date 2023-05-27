@@ -1,39 +1,40 @@
-import { Client, Message } from 'node-osc';
-
-import { playAudioFile } from 'audic';
-
-function timeout(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-console.log('Starting...');
+const { app, BrowserWindow } = require('electron')
+const path = require('path')
+const { Client } = require('node-osc');
 
 const client = new Client('127.0.0.1', 9000);
 
-(async () => {
+function createWindow () {
+  const win = new BrowserWindow({
+    width: 535,
+    height: 385,
+    titleBarStyle: 'hidden',
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    }
+  })
 
-  console.log('spin spin spin spin');
-  playAudioFile('intro.mp3');
+  win.loadFile('index.html')
+  win.setPosition(10, 10)
+}
+
+app.whenReady().then(() => {
+  createWindow()
 
   client.send('/input/LookRight', 1, () => {
     client.close();
   });
 
-  await timeout(2187);
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow()
+    }
+  })
+})
 
-  while (true) {
-    playAudioFile('spinloop.mp3');
-    await timeout(16999);
-  };
+app.on('window-all-closed', () => {
 
-})();
-
-['SIGINT', 'SIGTERM', 'SIGQUIT']
-  .forEach(signal => process.on(signal, async () => {
-    client.send('/input/LookRight', 0, () => { });
-    console.log("Bye bye!");
-    console.log("If you keep spinning, turn OSC off then on again.");
-    await timeout(5000);
-
-    process.exit();
-  }));
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})

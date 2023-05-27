@@ -1,26 +1,28 @@
 {
   "name": "vrcspin",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "build": "npx caxa -i . -o \"pain.exe\" -m \"Uncompressing... This may take a moment.\" -- \"{{caxa}}/node_modules/.bin/node\" \"{{caxa}}/index.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bin": {
-    "app": "index.js"
+  "devDependencies": {
+    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1",
+    "@electron/rebuild": "^3.2.13",
+    "electron": "^24.4.0"
   },
   "dependencies": {
-    "audic": "^3.0.1",
-    "node-osc": "^8.0.11",
-    "prompts": "^2.4.2"
-  },
-  "devDependencies": {
-    "caxa": "^3.0.1"
+    "electron-squirrel-startup": "^1.0.0",
+    "node-osc": "^8.0.11"
   }
 }
