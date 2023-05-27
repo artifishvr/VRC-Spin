@@ -1,10 +1,12 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const { Client } = require('node-osc');
+const { autoUpdater } = require("electron-updater");
+
 
 const client = new Client('127.0.0.1', 9000);
 
-function createWindow () {
+function createWindow() {
   const win = new BrowserWindow({
     width: 535,
     height: 385,
@@ -18,9 +20,10 @@ function createWindow () {
 
 app.whenReady().then(() => {
   createWindow()
-  
+  autoUpdater.checkForUpdatesAndNotify();
 
-  client.send('/input/LookRight', 1, () => {});
+
+  client.send('/input/LookRight', 1, () => { });
   client.send('/input/MoveLeft', 1, () => {
     client.close();
   });

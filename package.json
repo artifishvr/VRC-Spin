@@ -1,19 +1,24 @@
 {
   "name": "vrcspin",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "terrible OSC joke",
+  "repository": "https://github.com/artificialbutter/VRC-Spin",
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
     "rebuild": "electron-rebuild",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "publish": "electron-builder -p always"
   },
   "build": {
     "appId": "gay.arti.vrcspin",
     "productName": "VRCSpin",
     "win": {
-      "target": "portable"
+      "target": "portable",
+      "publish": [
+        "github"
+      ]
     }
   },
   "keywords": [],
@@ -27,6 +32,7 @@
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^5.3.0",
     "node-osc": "^8.0.11"
   }
 }
