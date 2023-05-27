@@ -13,9 +13,10 @@ function createWindow() {
     titleBarStyle: 'hidden'
   })
 
-  win.loadFile(path.join(__dirname, 'index.html'))
-  win.setPosition(10, 10)
-  win.setAlwaysOnTop(true)
+  win.loadFile(path.join(__dirname, 'index.html'));
+  win.setPosition(10, 10);
+  win.setAlwaysOnTop(true);
+  win.setResizable(false)
 }
 
 app.whenReady().then(() => {
