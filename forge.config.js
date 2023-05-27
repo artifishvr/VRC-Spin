@@ -1,3 +1,4 @@
+require('dotenv').config()
 module.exports = {
     packagerConfig: {},
     makers: [
@@ -13,7 +14,9 @@ module.exports = {
               owner: 'artificialbutter',
               name: 'vrcspin'
             },
-            prerelease: true
+            prerelease: true,
+            draft: true,
+            authToken: process.env.GITHUB_TOKEN
           }
         }
       ]
