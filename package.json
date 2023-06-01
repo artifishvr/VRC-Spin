@@ -8,14 +8,14 @@
     "start": "electron .",
     "rebuild": "electron-rebuild",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder",
+    "dist": "electron-builder -p never",
     "publish": "electron-builder -p always"
   },
   "build": {
     "appId": "gay.arti.vrcspin",
     "productName": "VRCSpin",
     "win": {
-      "target": ["portable", "nsis"],
+      "target": ["nsis", "portable"],
       "publish": [
         "github"
       ]
@@ -31,7 +31,6 @@
     "electron-builder": "^23.6.0"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0",
     "electron-updater": "^5.3.0",
     "node-osc": "^8.0.11"
   }
