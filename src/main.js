@@ -1,5 +1,5 @@
-const { app, BrowserWindow } = require('electron')
-const path = require('path')
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
 const { Client } = require('node-osc');
 const { autoUpdater } = require("electron-updater");
 
@@ -19,22 +19,21 @@ function createWindow() {
   win.setResizable(false)
 }
 
-app.whenReady().then(() => {
-  createWindow()
+app.on('ready', () => {
+  createWindow();
   autoUpdater.checkForUpdatesAndNotify();
-
 
   client.send('/input/LookRight', 1, () => { });
   client.send('/input/MoveLeft', 1, () => {
     client.close();
   });
+});
 
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow()
-    }
-  })
-})
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow()
+  }
+});
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
