@@ -11,8 +11,6 @@ Prebuilt EXEs can be found in [Releases](https://github.com/artificialbutter/VRC
 3. Run VRCSpin
 4. enjoy
 
-to stop spinning after you close vrcspin, disable & re-enable OSC in vrchat
-
 ## Build/Run it yourself
 Requires NodeJS LTS & npm 
 
