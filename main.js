@@ -3,9 +3,6 @@ const path = require('path');
 const { Client } = require('node-osc');
 const { autoUpdater } = require("electron-updater");
 
-
-const client = new Client('127.0.0.1', 9000);
-
 app.on('ready', () => {
 
   autoUpdater.checkForUpdatesAndNotify();
@@ -20,8 +17,8 @@ app.on('ready', () => {
     }
   });
   const controlWin = new BrowserWindow({
-    width: 100,
-    height: 100,
+    width: 120,
+    height: 80,
     autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
@@ -29,7 +26,7 @@ app.on('ready', () => {
     }
   });
   function createSpinWindow() {
-    spinWin.loadFile(path.join(__dirname, 'src/null.html'));
+    spinWin.loadURL("steam://launch/438100");
     spinWin.setPosition(10, 10);
     spinWin.setAlwaysOnTop(true);
     spinWin.setResizable(false);
@@ -38,36 +35,32 @@ app.on('ready', () => {
   function createControlWindow() {
     controlWin.loadFile(path.join(__dirname, 'src/control.html'));
     controlWin.setPosition(10, 10);
+    controlWin.setResizable(false);
+    controlWin.setAlwaysOnTop(true);
   };
   createSpinWindow();
   createControlWindow();
 
   ipcMain.on('startspin', () => {
-    client.send('/input/LookRight', 1, () => { });
-    client.send('/input/MoveLeft', 1, () => { });
+    const OSCClient = new Client('127.0.0.1', 9000);
+    OSCClient.send('/input/LookRight', 1, () => { });
     spinWin.loadFile(path.join(__dirname, 'src/index.html'));
     spinWin.show();
     controlWin.setPosition(10, 400);
   });
-  
+
   ipcMain.on('stopspin', () => {
-    client.send('/input/LookRight', 0, () => { });
-    client.send('/input/MoveLeft', 0, () => { });
+    const OSCClient = new Client('127.0.0.1', 9000);
+    OSCClient.send('/input/LookRight', 0, () => { });
     spinWin.loadFile(path.join(__dirname, 'src/null.html'));
     spinWin.hide();
     controlWin.setPosition(10, 10);
   });
 
   controlWin.on('close', () => {
-    client.send('/input/LookRight', 0, () => { });
-    client.send('/input/MoveLeft', 0, () => { });
+    const OSCClient = new Client('127.0.0.1', 9000);
+    OSCClient.send('/input/LookRight', 0, () => { });
     spinWin.close();
   });
 
 });
-
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
-})
