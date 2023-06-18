@@ -1,9 +1,9 @@
 {
   "name": "vrcspin",
-  "version": "2.1.3",
+  "version": "2.2.0",
   "description": "terrible OSC joke",
   "repository": "https://github.com/artificialbutter/VRC-Spin",
-  "main": "src/main.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron .",
     "rebuild": "electron-rebuild",
