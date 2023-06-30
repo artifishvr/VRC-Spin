@@ -7,8 +7,9 @@ a dumb joke using VRChat's OSC & [Camellia's Spin Eternally](https://youtu.be/Iu
 Prebuilt EXEs can be found in [Releases](https://github.com/artificialbutter/VRC-Spin/releases)
 
 1. Run VRCSpin
-2. Click start button
-3. enjoy
+2. wait for VRChat
+3. Click start button
+4. enjoy
 
 *if you don't start spinning in-game, check that OSC is enabled in VRChat and click the start button again*
 
