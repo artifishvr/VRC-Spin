@@ -6,10 +6,11 @@ a dumb joke using VRChat's OSC & [Camellia's Spin Eternally](https://youtu.be/Iu
 
 Prebuilt EXEs can be found in [Releases](https://github.com/artificialbutter/VRC-Spin/releases)
 
-1. Open VRChat
-2. Enable OSC
-3. Run VRCSpin
-4. enjoy
+1. Run VRCSpin
+2. Click start button
+3. enjoy
+
+*if you don't start spinning in-game, check that OSC is enabled in VRChat and click the start button again*
 
 ## Build/Run it yourself
 Requires NodeJS LTS & npm 
