@@ -23,7 +23,7 @@
   },
   "keywords": [],
   "author": "ArtificialVR",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "devDependencies": {
     "@electron/rebuild": "^3.2.13",
     "dotenv": "^16.0.3",
