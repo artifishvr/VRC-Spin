@@ -32,6 +32,6 @@
   },
   "dependencies": {
     "electron-updater": "^6.0.0",
-    "node-osc": "^9.0.0"
+    "node-osc": "^9.1.0"
   }
 }
