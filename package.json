@@ -27,7 +27,7 @@
   "devDependencies": {
     "@electron/rebuild": "^3.6.0",
     "dotenv": "^16.4.5",
-    "electron": "^29.1.6",
+    "electron": "^29.2.0",
     "electron-builder": "^24.13.3"
   },
   "dependencies": {
