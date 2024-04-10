@@ -22,15 +22,13 @@ These instructions have only been tested on Windows with NodeJS v18.15.0
 ### Install Dependencies
 `` npm i ``
 
-`` npm run rebuild ``
-
 ### Start (Optional)
 `` npm start ``
 
-### Build EXE (Optional)
+### Build Executable (Optional)
 `` npm run dist ``
 
-you can find the built EXE in /dist after it is done building
+you can find the built executable in /dist after it is done building
 
 ## Contributing
 
