@@ -1,6 +1,6 @@
 {
   "name": "vrcspin",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "terrible OSC joke",
   "repository": "https://github.com/artificialbutter/VRC-Spin",
   "main": "main.js",
